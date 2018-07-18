@@ -1,8 +1,5 @@
 $(function() {
-	//getAll();
-	$("#h1").click(function(){alert(0)});
-		 
-	 
+	getAll();
 });
 
 function get() {

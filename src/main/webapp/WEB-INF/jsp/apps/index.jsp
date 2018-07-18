@@ -6,27 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>首页</title>
 <script type="text/javascript" src="${staticPath}/js/jquery.2.0.0.min.js"></script>
-<script type="text/javascript" src="${staticPath}/js/index.js"></script> 
-<script>
-$(function(){
-	$(":text").click(function(){
-		//console.log(0)
-		 $(this).val("")
-	})
-	var mphone = $("#mphone").val();
-	var myreg = /^[1][3,4,5,7,8][0-9]{9}$/;
-	$("#mphone").blur(function(){
-		if(myreg.test(mphone) ==false){
-			alert("手机号格式不正确")
-		}else{
-			alert("校验成功")
-		}
-	}) 
-	
-})
-</script>
-
-
+<script type="text/javascript" src="${staticPath}/js/index.js"></script>
 </head>
 <body>
 	<h1 id="h1">
