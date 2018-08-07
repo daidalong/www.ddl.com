@@ -1,5 +1,7 @@
 package com.ddl.core.utils;
 
+import redis.clients.jedis.Jedis;
+
 public class SqrtUtil {
 
 	public static double sqrt(double c) {
@@ -38,4 +40,14 @@ public class SqrtUtil {
 		}
 		return x1;
 	}
+	
+	public static void main(String[] args) {
+        //连接本地的 Redis 服务
+        Jedis jedis = new Jedis("localhost");
+        //设置 redis 字符串数据
+        final String code = jedis.set("hello", "www.runoob.com");
+        System.out.println(code);
+        // 获取存储的数据并输出
+        System.out.println("redis 存储的字符串为: "+ jedis.get("hello"));
+    }
 }

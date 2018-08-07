@@ -1,5 +1,5 @@
 $(function() {
-	getAll();
+	//getAll();
 });
 
 function get() {
