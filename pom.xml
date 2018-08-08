@@ -3,8 +3,8 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.wanmei</groupId>
-	<artifactId>pa.sys.wanmei.net</artifactId>
+	<groupId>com.ddl</groupId>
+	<artifactId>www.ddl.com</artifactId>
 	<version>0.0.1</version>
 	<packaging>war</packaging>
 	<name>andy</name>
@@ -41,7 +41,7 @@
 					<connectors>
 						<connector
 							implementation="org.eclipse.jetty.server.nio.SelectChannelConnector">
-							<port>8080</port>
+							<port>8081</port>
 							<maxIdleTime>60000</maxIdleTime>
 						</connector>
 					</connectors>
