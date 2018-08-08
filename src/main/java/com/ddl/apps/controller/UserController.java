@@ -74,7 +74,7 @@ public class UserController {
 			return dson;
 		}
 
-		User user = null;
+		User user;
 		try {
 			user = paService.getUserByMobile(mobile);
 			dson.setCode(0);

@@ -1,16 +1,9 @@
-/**
- * 
- */
 package com.ddl.apps.model.po;
 
 import java.util.Date;
 
 import com.ddl.core.utils.DateUtil;
 
-/**
- * @author daidalong
- *
- */
 public class User {
 	private Integer id;
 	private String name;
