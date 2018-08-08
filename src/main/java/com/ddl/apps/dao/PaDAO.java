@@ -13,11 +13,11 @@ import com.ddl.apps.model.po.User;
 public interface PaDAO {
 
 	@Insert("insert into user (name,mobile,create_time) values (#{name},#{mobile},#{createTime})")
-	public void insertUser(final User user) throws Exception;
+	void insertUser(final User user) throws Exception;
 
 	@Select("select id,name,mobile,create_time from user where 1=1 and mobile=#{mobile} order by id desc limit 1")
-	public User getUserByMobile(@Param("mobile") final String mobile) throws Exception;
+	User getUserByMobile(@Param("mobile") final String mobile) throws Exception;
 	
 	@Select("select id,name,mobile,create_time from user where 1=1 order by id desc limit 10")
-	public List<User> getAllUserList();
+	List<User> getAllUserList();
 }

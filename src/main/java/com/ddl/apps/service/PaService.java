@@ -22,7 +22,7 @@ public class PaService {
 		return paDAO.getUserByMobile(mobile);
 	}
 
-	public List<User> getAllUserList() throws Exception {
+	public List<User> getAllUserList() {
 		return paDAO.getAllUserList();
 	}
 }

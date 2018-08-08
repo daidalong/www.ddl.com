@@ -5,7 +5,7 @@ $(function() {
 function get() {
 	var mobile = $("#mphone").val();
 	var url = "/user/get";
-	var data = {}
+	var data = {};
 	data.mobile = mobile;
 	$.ajax({
 		type : "POST",
