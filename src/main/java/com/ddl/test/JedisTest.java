@@ -45,11 +45,11 @@ public class JedisTest {
 
         // 设置过期
         jedis.expire("ddl", 5);//5秒过期
-        try {
+        /*try {
             Thread.sleep(5 * 1001);
         } catch (InterruptedException e) {
             e.printStackTrace();
-        }
+        }*/
 
         // 并测试过期
         String s11 = jedis.get("ddl");
@@ -81,15 +81,35 @@ public class JedisTest {
             System.out.println(entry.getKey() + ":" + entry.getValue());
         }
 
+        // 删除哈希表中一个或多个域
+        jedis.hdel("key1", "field1");
+
         // 返回值的集合
         List list1 = jedis.hmget("key1", "field1", "field2");
         for (int i = 0; i < list1.size(); i++) {
             System.out.println("two-" + list1.get(i));
         }
 
+        //查看哈希表给定域是否存在
+        boolean hexists = jedis.hexists("key1", "field2");
+        System.out.println("hexists=" + hexists);
+
+        //返回哈希表中所有的域
+        Set<String> fields = jedis.hkeys("key1");
+        System.out.println("fields=" + fields);
+
+        //返回哈希表中所有的值
+        List<String> values = jedis.hvals("key1");
+        System.out.println("values=" + values);
+
+
+
         // 获取全部keys
         Set<String> keys = jedis.keys("*");
         System.out.println(keys);
+
+        //long length = jedis.llen("key1");
+        //System.out.println("length=" + length);
 
         jedis.close();
 
