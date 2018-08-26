@@ -41,6 +41,8 @@ public class JedisStringTest {
 
         System.out.println("写入redis完成！");
 
+        System.out.println("bugfix_13");
+
 
 
 
