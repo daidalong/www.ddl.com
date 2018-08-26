@@ -29,8 +29,13 @@ public class JedisStringTest {
         userInfoMap2.put("address","上海");
         userInfoMap2.put("age","32");
 
+        Map<String,String> userInfoMap3 = new HashMap<String,String>();
+        userInfoMap3.put("address","广州");
+        userInfoMap3.put("age","31");
+
         jedis.hmset(USER_INFO_KEY + "100001",userInfoMap1);
         jedis.hmset(USER_INFO_KEY + "100003",userInfoMap2);
+        jedis.hmset(USER_INFO_KEY + "100004",userInfoMap3);
 
         jedis.sadd(USER_FRIEND_KEY + "100001","甲","乙","丙");
 
