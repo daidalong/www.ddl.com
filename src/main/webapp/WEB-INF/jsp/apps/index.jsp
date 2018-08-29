@@ -12,27 +12,5 @@
 	<h1 id="h1">
 		您好<span style="color: red;">胖子</span>，欢迎您！
 	</h1>
-
-	<span class="user-span"> 用户名：<input type="text" name="name" value="1" /> 手机号：<input type="text" name="mobile" value="1" /></span>
-	<br>
-	<span class="user-span"> 用户名：<input type="text" name="name" value="2" /> 手机号：<input type="text" name="mobile" value="2" /></span>
-	<br>
-	<span class="user-span"> 用户名：<input type="text" name="name" value="3" /> 手机号：<input type="text" name="mobile" value="3" /></span>
-	<br>
-	<br>
-	<input type="button" onclick="add()" value="  添加  " />
-
-	<br>
-	<br> 手机号：
-	<input id="mphone" type="text" name="mobile" value="3" />
-	<br>
-	<br>
-	<input type="button" onclick="get()" value="  查询  " />
-	<br>
-	<br>
-	<table cellpadding="0" cellspacing="0" border="1" width="600" style="overflow: scroll;"></table>
-
-	<br>
-	<br>
 </body>
 </html>
