@@ -30,7 +30,7 @@ public class JedisStringTest {
         userInfoMap2.put("age","32");
 
         Map<String,String> userInfoMap3 = new HashMap<String,String>();
-        userInfoMap3.put("address","广州");
+        userInfoMap3.put("address","深圳");
         userInfoMap3.put("age","31");
 
         jedis.hmset(USER_INFO_KEY + "100001",userInfoMap1);
