@@ -1,9 +1,11 @@
 package com.ddl.test;
 
+import lombok.Builder;
 import lombok.Data;
 
 import java.io.Serializable;
 
+@Builder
 @Data
 public class User implements Serializable {
 
