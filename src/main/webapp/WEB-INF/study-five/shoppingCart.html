@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{ padding: 0; margin: 0;}
+        body{
+            -webkit-user-select:none;
+            -moz-user-select:none;
+            -ms-user-select:none;
+            user-select:none;
+        }
+        table{ border-spacing: 0; border-collapse: collapse;}
+        .shopping{ width: 500px; margin: 40px auto;}
+.shopping p{ width: 100%; overflow: hidden; color: #fff; margin-top: 10px; height: 44px; line-height: 44px;background: #f10180;}
+        .shopping p span{ width:40%; padding-right: 20px;  text-align:right;float: left;}
+        .shopping table{ width: 100%; border-left: 1px solid #ccc; border-top: 1px solid #ccc;}
+        .shopping table th{ background: #f10180; color: #fff;  text-align: center; -border-right: 1px solid #ccc; border-bottom: 1px solid #ccc;}
+        .shopping table td{ padding: 15px 10px; text-align: center;  border-right: 1px solid #ccc; border-bottom: 1px solid #ccc;}
+        .shopping table td:nth-child(3) input{ width: 50px; height: 20px; line-height: 20px; text-align: center; color: #f10180}
+        .shopping table td:nth-child(3) span{ display: inline-block; line-height: 20px; text-align: center; width: 20px; height: 20px; background: #c0c0c0}
+    </style>
+    <script>
+        window.onload = function () {
+           // let aBtn = document.querySelectorAll(".shopping table tr td:nth-child(3) span");
+           // let oInput = document.querySelector(".shopping table td:nth-child(3) input")
+//console.log(aBtn.length)
+            let aTr = document.querySelectorAll(".shopping table tr");
+            let aTotal = document.querySelectorAll(".shopping p label");
+            let ojian = aTotal[0];
+            let oqian = aTotal[1];
+
+            let total = 0;
+            let totalPrice = 0.0;
+             for(let i = 1;i<aTr.length;i++){
+                let aBtn = aTr[i].querySelectorAll("span");
+                let aTd = aTr[i].querySelectorAll("td");
+                let oSmall = aTd[3];
+                let oDanjia = parseFloat(aTd[1].innerHTML);
+                 //console.log(oDanjia.innerHTML )
+
+
+                let oInput = aTr[i].querySelector("input");
+                let n = parseInt(oInput.value);
+
+
+                for(let j=0;j<aBtn.length;j++){
+                    //减商品
+                     aBtn[0].onclick = function(){
+
+                        if(n<=0)return;
+                         n--;
+
+                         oInput.value = n;
+                        // console.log(oSmall)
+                        oSmall.innerHTML = n*oDanjia;
+                        total--;
+                        console.log(total)
+                         ojian.innerHTML = total;
+
+                         totalPrice -= n*oDanjia;
+                         oqian.innerHTML = totalPrice;
+
+                         console.log(totalPrice)
+
+
+
+                     }
+                     //加商品
+                    aBtn[1].onclick =function(){
+
+                        if(n>=10)return;
+                        n++;
+
+                        oInput .value = n;
+                        oSmall.innerHTML = n*oDanjia;
+                        total++;
+                        console.log(total)
+                        ojian.innerHTML = total;
+
+                        totalPrice += n*oDanjia;
+                        oqian.innerHTML = totalPrice;
+
+                        console.log(totalPrice)
+
+
+                    }
+                }
+
+            }
+
+
+        }
+    </script>
+</head>
+<body>
+<div class="shopping">
+    <div>
+        <table>
+            <tr>
+                <th>商品</th>
+                <th>单价</th>
+                <th>数量</th>
+                <th>小计</th>
+            </tr>
+            <tr>
+                <td>商品1</td>
+                <td>8</td>
+                <td><span>-</span><input type="text" value="0" onready="onready"/> <span>+</span></td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>商品2</td>
+                <td>10</td>
+                <td><span>-</span><input type="text"  value="0" onready="onready"/> <span>+</span></td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>商品3</td>
+                <td>12.5</td>
+                <td><span>-</span><input type="text" value="0" onready="onready"/> <span>+</span></td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>商品4</td>
+                <td>23</td>
+                <td><span>-</span><input type="text" value="0" onready="onready"/> <span>+</span></td>
+                <td>0</td>
+            </tr>
+
+        </table>
+        <p ><span>已选中商品<label>34</label>件</span><span>合计费用<label>20.00</label>¥</span></p>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>五星好评</title>
+    <style>
+        *{ padding: 0; margin: 0;}
+        li{list-style: none;}
+        .start{ width: 402px; margin: 50px auto;}
+        .start h2{ width: 50px; float: left; font-size: 12px;}
+        .start ul{ width: 200px; float: left;}
+        .start ul li{width: 30px; height: 30px; float: left; background: url("img/sprite.png"); background-position: -790px -97px;}
+        .start p{ width: 150px; float: left; border: 1px #ccc solid;}/*760显示*/
+        .show{ background-position: -760px -97px !important;}
+    </style>
+    <script>
+        window.onload = function(){
+            let arr = ['很差很差','有点差','一般','挺好','非常好'],
+                ali = document.querySelectorAll(".start ul li"),
+                op = document.querySelector(".start p");
+            let flag = "out";
+            //console.log(ali)
+            for(let i = 0; i<ali.length;i++){
+                ali[i].index = i;
+                ali[i].onmouseover = function(){
+
+                    for( let i = 0;i<ali.length; i++){
+                        ali[i].className = "";
+                        op.innerHTML = "";
+                    }
+                    for( let j=0 ;j<=i;j++){
+                        ali[j].className = "show";
+                        op.innerHTML = arr[j];
+
+                    }
+
+
+                };
+                ali[i].onmouseout = function(){
+                    if(flag == "click")return;
+                    for(let k=0; k<=i;k++){
+
+                        ali[k].className = "";
+
+                    }
+                };
+                ali[i].onclick = function(){
+                    for(let m=0; m<=i;m++){
+                        //console.log(0);
+                        ali[m].className = "show";
+
+                    }
+                    flag = "click";
+
+
+
+                }
+            }
+
+
+
+        }
+    </script>
+</head>
+<body>
+<div>
+    <div class="start">
+        <h2>星级评分</h2>
+        <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+        <p></p>
+    </div>
+</div>
+
+</body>
+</html>
